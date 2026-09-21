@@ -1,0 +1,132 @@
+// Animation commune
+@keyframes rotate-flower{
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+
+// Sunflower
+.story {
+  h2 {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0.7em;
+      top: 6em;
+
+      width: 150px;
+      height: 150px;
+
+      background-image: url('../assets/images/Sunflower.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+
+      transform-origin: center center;
+      animation: rotate-flower 8s linear infinite;
+    }
+  }
+
+
+  // Hibiscus
+  &__article {
+    &::after {
+      content: "";
+      position: absolute;
+      left: calc(50% + 414px);
+      top: 2em;
+
+      width: 200px;
+      height: 200px;
+
+      background-image: url('../assets/images/Hibiscus.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+
+      transform-origin: center center;
+      animation: rotate-flower 8s linear infinite;
+    }
+  }
+}
+
+
+// Random flower + flower
+#studio {
+
+  h2 {
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -1em;
+      top: 0;
+
+      width: 200px;
+      height: 200px;
+
+      background-image: url('../assets/images/random_flower.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+
+      transform-origin: center center;
+      animation: rotate-flower 8s linear infinite;
+    }
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 1em;
+      top: 1.2em;
+
+      width: 150px;
+      height: 150px;
+
+      background-image: url('../assets/images/flower.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+
+      transform-origin: center center;
+      animation: rotate-flower 8s linear infinite;
+    }
+  }
+}
+
+
+// Responsive : conserver le comportement du parent
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+
+  .story {
+
+    h2 {
+      &::after {
+        content: '';
+      }
+    }
+
+    &__article {
+      &::after {
+        content: '';
+      }
+    }
+  }
+
+
+  #studio {
+
+    h2 {
+      &::before,
+      &::after {
+        content: '';
+      }
+    }
+  }
+}
