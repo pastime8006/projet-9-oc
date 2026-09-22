@@ -1,11 +1,17 @@
-// Center block
-@mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+// Centrage flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-// Column width with margin
-@mixin column-width($numberColumns: 3) {
-	width: map-get($columns, $numberColumns) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+@mixin bg-settings {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+}
+
+@mixin rotate-animation {
+  transform-origin: center center;
+  animation: rotate-flower 8s linear infinite;
 }

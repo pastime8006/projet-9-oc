@@ -5,8 +5,7 @@
     left: calc(50% - 323px);
     bottom: -28.5em;
     z-index: -1;
-    transform-origin: center center;
-    animation: rotate-flower 8s linear infinite;
+    @include rotate-animation;
   }
   &::before {
     content: url("../assets/images/Sunflower.png");
@@ -14,8 +13,7 @@
     left: 4em;
     top: 0em;
     z-index: -1;
-    transform-origin: center center;
-    animation: rotata-flower 8s linear infinite;
+    @include rotate-animation;
   }
   &::after {
     content: url("../assets/images/orchid.png");
@@ -23,8 +21,7 @@
     right: -4em;
     bottom: 7.8em;
     z-index: -1;
-    transform-origin: center center;
-    animation: rotate-flower 8s linear infinite;
+    @include rotate-animation;
   }
 }
 

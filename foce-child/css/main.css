@@ -67,7 +67,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   top: 0em;
   z-index: -1;
   transform-origin: center center;
-  animation: rotata-flower 8s linear infinite;
+  animation: rotate-flower 8s linear infinite;
 }
 .site-footer::after {
   content: url("../assets/images/orchid.png");
@@ -98,6 +98,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     transform: rotate(-360deg);
   }
 }
+.banner {
+  background-image: url("../assets/images/banner.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .story h2::after {
   content: "";
   position: absolute;

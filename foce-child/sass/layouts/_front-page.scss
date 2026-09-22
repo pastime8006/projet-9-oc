@@ -1,5 +1,5 @@
 // Animation commune
-@keyframes rotate-flower{
+@keyframes rotate-flower {
   from {
     transform: rotate(0deg);
   }
@@ -9,6 +9,10 @@
   }
 }
 
+.banner {
+  background-image: url("../assets/images/banner.png");
+  @include flex-center;
+}
 
 // Sunflower
 .story {
@@ -22,16 +26,11 @@
       width: 150px;
       height: 150px;
 
-      background-image: url('../assets/images/Sunflower.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-
-      transform-origin: center center;
-      animation: rotate-flower 8s linear infinite;
+      background-image: url("../assets/images/Sunflower.png");
+      @include bg-settings;
+      @include rotate-animation;
     }
   }
-
 
   // Hibiscus
   &__article {
@@ -44,23 +43,16 @@
       width: 200px;
       height: 200px;
 
-      background-image: url('../assets/images/Hibiscus.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-
-      transform-origin: center center;
-      animation: rotate-flower 8s linear infinite;
+      background-image: url("../assets/images/Hibiscus.png");
+      @include bg-settings;
+      @include rotate-animation;
     }
   }
 }
 
-
 // Random flower + flower
 #studio {
-
   h2 {
-
     &::before {
       content: "";
       position: absolute;
@@ -70,16 +62,10 @@
       width: 200px;
       height: 200px;
 
-      background-image: url('../assets/images/random_flower.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-
-      transform-origin: center center;
-      animation: rotate-flower 8s linear infinite;
+      background-image: url("../assets/images/random_flower.png");
+      @include bg-settings;
+      @include rotate-animation;
     }
-
-
     &::after {
       content: "";
       position: absolute;
@@ -89,43 +75,34 @@
       width: 150px;
       height: 150px;
 
-      background-image: url('../assets/images/flower.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: auto;
-
-      transform-origin: center center;
-      animation: rotate-flower 8s linear infinite;
+      background-image: url("../assets/images/flower.png");
+      @include bg-settings;
+      @include rotate-animation;
     }
   }
 }
 
-
 // Responsive : conserver le comportement du parent
 @media all and (max-width: #{$breakpoint__small_tablet}) {
-
   .story {
-
     h2 {
       &::after {
-        content: '';
+        content: "";
       }
     }
 
     &__article {
       &::after {
-        content: '';
+        content: "";
       }
     }
   }
 
-
   #studio {
-
     h2 {
       &::before,
       &::after {
-        content: '';
+        content: "";
       }
     }
   }
