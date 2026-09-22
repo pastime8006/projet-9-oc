@@ -12,7 +12,7 @@ get_header();
             muted 
             loop 
             playsinline 
-            poster="<?php echo get_stylesheet_directory_uri() . '/assets/images/banner-fallback3.png';?>"
+         
             
             id="myVideo">
                     <source 
