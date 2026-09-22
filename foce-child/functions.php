@@ -25,6 +25,16 @@ function theme_enqueue_styles() {
         array( 'child-style' ),
         filemtime( get_stylesheet_directory() . '/css/main.css' )
     );
+     // JavaScript animation scroll
+    wp_enqueue_script(
+        'anim-scroll',
+        get_stylesheet_directory_uri() . '/js/anim-scroll.js',
+        array(),
+        '1.0',
+        true
+    );
+
+    
 }
 
 
@@ -48,3 +58,4 @@ if ( get_stylesheet() !== get_template() ) {
         }
     );
 }
+

@@ -9,14 +9,32 @@
   }
 }
 
+@include fade-in;
+
 .banner {
   background-image: url("../assets/images/banner.png");
   @include flex-center;
+  animation: fade-in 2s ease-in-out;
 }
 
 // Sunflower
 .story {
+  @include fade-in(fade-top, 100px);
+  animation: fade-top 2s ease-in-out;
   h2 {
+    @include fade-in(fade-top, 100px);
+    animation: fade-top 2s ease-in-out;
+
+    span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    span.is-visible {
+      animation: fade-top 2s ease-in-out forwards;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -50,9 +68,79 @@
   }
 }
 
+#characters {
+  h3 {
+    background-image: url("../assets/images/orange_characters_bg.png");
+    opacity: 1;
+
+    span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    span.is-visible {
+      animation: fade-top 2s ease-in-out forwards;
+    }
+
+  }
+  div {
+    flex: 1;
+  }
+  .other-characters {
+    display: flex;
+    flex-wrap: wrap;
+    figure {
+      width: 50%;
+      padding: 2% 10%;
+      margin: 0;
+    }
+  }
+}
+
+#place {
+  display: flex;
+  background-image: url("../assets/images/place_bg.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  h3 {
+    background-image: url("../assets/images/orange_place_bg.png");
+    margin-bottom: -1em;
+    opacity: 1;
+
+     span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    span.is-visible {
+      animation: fade-top 2s ease-in-out forwards;
+    }
+
+  }
+}
+
 // Random flower + flower
 #studio {
+  @include fade-in(fade-top, 100px);
+  animation: fade-top 2s ease-in-out;
   h2 {
+    @include fade-in(fade-top, 100px);
+    animation: fade-top 2s ease-in-out;
+
+      span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    span.is-visible {
+      animation: fade-top 2s ease-in-out forwards;
+    }
+
+
     &::before {
       content: "";
       position: absolute;

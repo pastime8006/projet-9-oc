@@ -49,6 +49,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+/* ANIMATION FADE-IN */
 /* footer
 --------------------------------------------- */
 .site-footer ul::after {
@@ -98,13 +99,58 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     transform: rotate(-360deg);
   }
 }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .banner {
   background-image: url("../assets/images/banner.png");
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fade-in 2s ease-in-out;
 }
 
+.story {
+  animation: fade-top 2s ease-in-out;
+}
+@keyframes fade-top {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.story h2 {
+  animation: fade-top 2s ease-in-out;
+}
+@keyframes fade-top {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.story h2 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+}
+.story h2 span.is-visible {
+  animation: fade-top 2s ease-in-out forwards;
+}
 .story h2::after {
   content: "";
   position: absolute;
@@ -134,6 +180,86 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   animation: rotate-flower 8s linear infinite;
 }
 
+#characters h3 {
+  background-image: url("../assets/images/orange_characters_bg.png");
+  opacity: 1;
+}
+#characters h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+}
+#characters h3 span.is-visible {
+  animation: fade-top 2s ease-in-out forwards;
+}
+#characters div {
+  flex: 1;
+}
+#characters .other-characters {
+  display: flex;
+  flex-wrap: wrap;
+}
+#characters .other-characters figure {
+  width: 50%;
+  padding: 2% 10%;
+  margin: 0;
+}
+
+#place {
+  display: flex;
+  background-image: url("../assets/images/place_bg.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+}
+#place h3 {
+  background-image: url("../assets/images/orange_place_bg.png");
+  margin-bottom: -1em;
+  opacity: 1;
+}
+#place h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+}
+#place h3 span.is-visible {
+  animation: fade-top 2s ease-in-out forwards;
+}
+
+#studio {
+  animation: fade-top 2s ease-in-out;
+}
+@keyframes fade-top {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#studio h2 {
+  animation: fade-top 2s ease-in-out;
+}
+@keyframes fade-top {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#studio h2 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px);
+}
+#studio h2 span.is-visible {
+  animation: fade-top 2s ease-in-out forwards;
+}
 #studio h2::before {
   content: "";
   position: absolute;
