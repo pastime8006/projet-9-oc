@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
 
 function theme_enqueue_styles() {
 
@@ -36,6 +36,48 @@ function theme_enqueue_styles() {
 
     
 }
+
+function mon_theme_swiper() {
+
+
+
+if ( ! is_page(8) ) {
+    error_log('MAUVAISE PAGE SWIPER');
+    return;
+}
+ error_log('CHARGEMENT SWIPER');
+
+    // CSS Swiper
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11.0'
+    );
+
+    // JS Swiper
+    wp_enqueue_script(
+        'swiper-js',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11.0',
+        true
+    );
+
+    // Ton fichier JS personnalisé
+    wp_enqueue_script(
+        'mon-swiper-js',
+        get_stylesheet_directory_uri() . '/js/swiper-init.js',
+        array('swiper-js'),
+        '1.0',
+        true
+    );
+    error_log('SWIPER JS AJOUTE');
+
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'mon_theme_swiper' );
 
 
 // Get customizer options from parent theme
