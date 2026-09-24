@@ -57,6 +57,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   position: absolute;
   left: calc(50% - 323px);
   bottom: -28.5em;
+  overflow: hidden !important;
   z-index: -1;
   transform-origin: center center;
   animation: rotate-flower 8s linear infinite;
@@ -73,7 +74,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .site-footer::after {
   content: url("../assets/images/orchid.png");
   position: absolute;
-  right: -4em;
+  right: 0;
   bottom: 7.8em;
   z-index: -1;
   transform-origin: center center;
@@ -88,6 +89,40 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     transform: rotate(-360deg);
   }
 }
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+.mon-slider {
+  width: 80%;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: -100px !important;
+}
+.mon-slider .swiper-wrapper {
+  align-items: center;
+}
+.mon-slider .swiper-slide {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mon-slider .swiper-slide img {
+  max-width: 100%;
+  max-height: 350px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.mon-slider .swiper-slide .slider-legend {
+  margin: 10px 0 0;
+  text-align: center;
+  height: 20px;
+}
+
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
@@ -110,20 +145,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 .banner {
+  position: relative;
   background-image: url("../assets/images/banner.png");
   display: flex;
   justify-content: center;
   align-items: center;
   animation: fade-in 2s ease-in-out;
-}
-.banner img {
-  margin-top: -10%;
-  width: 50%;
-  display: block;
-}
-
-.banner {
-  position: relative;
 }
 .banner video {
   width: 100%;
@@ -152,8 +179,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     transform: translateY(0);
   }
 }
-.story h2 {
-  animation: fade-top 2s ease-in-out;
+.story h2 span {
+  display: inline-block;
+  opacity: 0.7;
 }
 @keyframes fade-top {
   from {
@@ -165,22 +193,18 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     transform: translateY(0);
   }
 }
-.story h2 span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(100px);
-}
 .story h2 span.is-visible {
   animation: fade-top 2s ease-in-out forwards;
 }
 .story h2::after {
   content: "";
   position: absolute;
-  left: 0.7em;
+  left: 0.765em;
   top: 6em;
   width: 150px;
   height: 150px;
   background-image: url("../assets/images/Sunflower.png");
+  left: 0.765em;
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto;
@@ -285,7 +309,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 #studio h2::before {
   content: "";
   position: absolute;
-  left: -1em;
+  left: 0;
   top: 0;
   width: 200px;
   height: 200px;
@@ -321,38 +345,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   #studio h2::before, #studio h2::after {
     content: "";
   }
-}
-/*--------------------------------------------------------------
-# SLIDER FRONT PAGE
---------------------------------------------------------------*/
-.mon-slider {
-  width: 80%;
-  height: 500px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.mon-slider .swiper-wrapper {
-  align-items: center;
-}
-.mon-slider .swiper-slide {
-  width: 300px;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.mon-slider .swiper-slide img {
-  max-width: 100%;
-  max-height: 350px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-.mon-slider .swiper-slide .slider-legend {
-  margin: 10px 0 0;
-  text-align: center;
-  height: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,8 +1,9 @@
 .mon-slider {
     width: 80%;
-    height: 350px;
+    height: 400px;
     margin: 0 auto;
     overflow: hidden;
+   margin-top: -100px !important;
 
     .swiper-wrapper {
         align-items: center;
@@ -10,7 +11,7 @@
 
     .swiper-slide {
         width: 300px;
-        height: 400px;
+        height: 350px;
 
         display: flex;
         justify-content: center;

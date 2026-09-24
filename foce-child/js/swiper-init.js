@@ -19,7 +19,7 @@ const swiper = new Swiper('.mon-slider', {
 
 
     autoplay: {
-        delay: 3000,
+        delay: 1000,
         disableOnInteraction: false,
     },
     loop: true,

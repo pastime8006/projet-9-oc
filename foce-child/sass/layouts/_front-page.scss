@@ -12,33 +12,26 @@
 @include fade-in;
 
 .banner {
+  position: relative;
   background-image: url("../assets/images/banner.png");
   @include flex-center;
+
   animation: fade-in 2s ease-in-out;
-    img {
-    margin-top: -10%;
-    width: 50%;
-    display:block
-}
-}
 
-.banner {
-    position: relative;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    img {
-        position: absolute;
-        z-index: 2;
-        width: 48%; // à adapter
-        top: 58%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+  img {
+    position: absolute;
+    z-index: 2;
+    width: 48%;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 // Sunflower
@@ -46,13 +39,10 @@
   @include fade-in(fade-top, 100px);
   animation: fade-top 2s ease-in-out;
   h2 {
-    @include fade-in(fade-top, 100px);
-    animation: fade-top 2s ease-in-out;
-
     span {
       display: inline-block;
-      opacity: 0;
-      transform: translateY(100px);
+      opacity: 0.7;
+      @include fade-in(fade-top, 100px);
     }
 
     span.is-visible {
@@ -62,13 +52,14 @@
     &::after {
       content: "";
       position: absolute;
-      left: 0.7em;
+      left: 0.765em;
       top: 6em;
 
       width: 150px;
       height: 150px;
 
       background-image: url("../assets/images/Sunflower.png");
+      left: 0.765em;
       @include bg-settings;
       @include rotate-animation;
     }
@@ -165,7 +156,7 @@
     &::before {
       content: "";
       position: absolute;
-      left: -1em;
+      left: 0;
       top: 0;
 
       width: 200px;
