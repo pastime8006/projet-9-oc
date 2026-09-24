@@ -1,3 +1,5 @@
+// ROTATIONS DES FLEURS
+
 // Récupère toutes les images
 const images = document.querySelectorAll(".image");
 

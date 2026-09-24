@@ -1,22 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
 
-    const slider = document.querySelector('.swiper');
+const swiper = new Swiper('.mon-slider', {
 
-    console.log('slider :', slider);
-    console.log('type :', typeof slider);
-    console.log('element HTML :', slider instanceof HTMLElement);
+    effect: 'coverflow',
 
-    if (!(slider instanceof HTMLElement)) {
-        console.error('Le slider n’est pas un élément HTML valide');
-        return;
-    }
+    grabCursor: false,
 
-    const swiper = new Swiper(slider, {
-        loop: true,
-        slidesPerView: 3,
-        spaceBetween: 20
-    });
+    centeredSlides: false,
 
-    console.log('Swiper OK', swiper);
+    slidesPerView: 'auto',
+
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+    },
+
+
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    loop: true,
+
+    speed: 1500,
 
 });

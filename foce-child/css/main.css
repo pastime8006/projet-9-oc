@@ -322,5 +322,37 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     content: "";
   }
 }
+/*--------------------------------------------------------------
+# SLIDER FRONT PAGE
+--------------------------------------------------------------*/
+.mon-slider {
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.mon-slider .swiper-wrapper {
+  align-items: center;
+}
+.mon-slider .swiper-slide {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mon-slider .swiper-slide img {
+  max-width: 100%;
+  max-height: 350px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.mon-slider .swiper-slide .slider-legend {
+  margin: 10px 0 0;
+  text-align: center;
+  height: 20px;
+}
 
 /*# sourceMappingURL=main.css.map */

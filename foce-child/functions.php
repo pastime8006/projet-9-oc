@@ -39,13 +39,11 @@ function theme_enqueue_styles() {
 
 function mon_theme_swiper() {
 
-
-
-if ( ! is_page(8) ) {
-    error_log('MAUVAISE PAGE SWIPER');
+if ( ! is_front_page() ) {
+ 
     return;
 }
- error_log('CHARGEMENT SWIPER');
+
 
     // CSS Swiper
     wp_enqueue_style(
@@ -72,7 +70,7 @@ if ( ! is_page(8) ) {
         '1.0',
         true
     );
-    error_log('SWIPER JS AJOUTE');
+  
 
 }
 
