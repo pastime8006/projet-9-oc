@@ -9,6 +9,18 @@
   }
 }
 
+
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(calc(-50% + 35px));
+  }
+}
+  
+
 @include fade-in;
 
 .banner {
@@ -16,7 +28,7 @@
   background-image: url("../assets/images/banner.png");
   @include flex-center;
 
-  animation: fade-in 2s ease-in-out;
+  animation: fade-in 1s ease-in-out;
 
   video {
     width: 100%;
@@ -31,13 +43,16 @@
     top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
   }
 }
 
 // Sunflower
 .story {
-  @include fade-in(fade-top, 100px);
   animation: fade-top 2s ease-in-out;
+  @include fade-in(fade-top, 100px);
+
   h2 {
     span {
       display: inline-block;
@@ -46,7 +61,7 @@
     }
 
     span.is-visible {
-      animation: fade-top 2s ease-in-out forwards;
+      animation: fade-top 5s ease-in-out forwards;
     }
 
     &::after {
@@ -138,10 +153,11 @@
 // Random flower + flower
 #studio {
   @include fade-in(fade-top, 100px);
-  animation: fade-top 2s ease-in-out;
+  overflow: hidden;
+
   h2 {
-    @include fade-in(fade-top, 100px);
     animation: fade-top 2s ease-in-out;
+    @include fade-in(fade-top, 100px);
 
     span {
       display: inline-block;
@@ -156,7 +172,7 @@
     &::before {
       content: "";
       position: absolute;
-      left: 0;
+      left: -1.1em;
       top: 0;
 
       width: 200px;
@@ -205,5 +221,11 @@
         content: "";
       }
     }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__large_phone}) {
+  #myVideo {
+    display: none;
   }
 }

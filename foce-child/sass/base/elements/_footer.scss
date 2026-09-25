@@ -19,7 +19,7 @@
   &::after {
     content: url("../assets/images/orchid.png");
     position: absolute;
-    right: 0;
+    right: -5em;
     bottom: 7.8em;
     z-index: -1;
     @include rotate-animation;

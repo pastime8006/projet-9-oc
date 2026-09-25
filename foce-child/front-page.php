@@ -13,14 +13,13 @@ get_header();
             loop
             playsinline
 
-
             id="myVideo">
             <source
-                src="<?php echo get_stylesheet_directory_uri() . '/assets/vidéos/koukaki-video.mp4'; ?>"
+                src="<?php echo get_stylesheet_directory_uri() . '/assets/videos/koukaki-video.mp4'; ?>"
                 type="video/mp4">
         </video>
 
-        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+        <img class="site-logo"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
     </section>
 
     <!-------------------------SECTION STORY-------------------->
