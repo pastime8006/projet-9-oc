@@ -1,0 +1,49 @@
+#place {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Le texte */
+#place > div {
+  position: relative;
+  z-index: 5;
+}
+
+/* Gros nuage */
+.place-bigcloud {
+  position: absolute;
+
+  width: 350px;
+
+  top: 70px;
+  right: 80px;
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  filter: blur(12px);
+  transform: translateX(0);
+
+  transition: transform 0.2s ease-out;
+}
+
+/* Petit nuage */
+.place-littlecloud {
+  position: absolute;
+
+  width: 180px;
+
+  top: 240px;
+  right: 460px;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  filter: blur(12px);
+
+  transform: translateX(0);
+
+  transition: transform 0.2s ease-out;
+}

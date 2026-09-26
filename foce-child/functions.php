@@ -34,6 +34,15 @@ function theme_enqueue_styles() {
         true
     );
 
+      // JavaScript animation scroll
+    wp_enqueue_script(
+        'parrallax',
+        get_stylesheet_directory_uri() . '/js/parrallax.js',
+        array(),
+        '1.0',
+        true
+    );
+
     
 }
 

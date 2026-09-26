@@ -12,3 +12,6 @@ const images = document.querySelectorAll(".image");
     // Applique la classe qui contient l'animation
     image.classList.add("rotate");
   
+
+
+

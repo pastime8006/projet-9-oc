@@ -59,9 +59,13 @@ get_header();
         <!-------------------------SECTION PLACE-------------------->
 
         <article id="place">
+
+            <img class="place-bigcloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?>"alt="Gros nuage">
+            <img class="place-littlecloud" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?>"alt="Petit nuage">
             <div>
                 <h3><span>Le Lieu</span></h3>
                 <p><?php echo get_theme_mod('place'); ?></p>
+             
             </div>
 
         </article>

@@ -50,6 +50,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 /* ANIMATION FADE-IN */
+/* Navigation
+// --------------------------------------------- */
+/* Posts and pages
+--------------------------------------------- */
+/* Comments
+--------------------------------------------- */
+/* Widgets
+--------------------------------------------- */
+/* Media
+--------------------------------------------- */
+/* Captions
+--------------------------------------------- */
+/* Galleries
+--------------------------------------------- */
 /* footer
 --------------------------------------------- */
 .site-footer ul::after {
@@ -121,6 +135,46 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin: 10px 0 0;
   text-align: center;
   height: 20px;
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+#place {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Le texte */
+#place > div {
+  position: relative;
+  z-index: 5;
+}
+
+/* Gros nuage */
+.place-bigcloud {
+  position: absolute;
+  width: 350px;
+  top: 70px;
+  right: 80px;
+  z-index: 3;
+  pointer-events: none;
+  filter: blur(12px);
+  transform: translateX(0);
+  transition: transform 0.2s ease-out;
+}
+
+/* Petit nuage */
+.place-littlecloud {
+  position: absolute;
+  width: 180px;
+  top: 240px;
+  right: 460px;
+  z-index: 4;
+  pointer-events: none;
+  filter: blur(12px);
+  transform: translateX(0);
+  transition: transform 0.2s ease-out;
 }
 
 /*--------------------------------------------------------------
@@ -261,24 +315,24 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin: 0;
 }
 
-#place {
+.story #place {
   display: flex;
-  background-image: url("../assets/images/place_bg.png");
+  background-image: url("../assets/images/Studio_Koukaki-image_place.png");
   width: 100%;
   min-height: 699px;
   background-size: cover;
 }
-#place h3 {
+.story #place h3 {
   background-image: url("../assets/images/orange_place_bg.png");
   margin-bottom: -1em;
   opacity: 1;
 }
-#place h3 span {
+.story #place h3 span {
   display: inline-block;
   opacity: 0;
   transform: translateY(100px);
 }
-#place h3 span.is-visible {
+.story #place h3 span.is-visible {
   animation: fade-top 2s ease-in-out forwards;
 }
 

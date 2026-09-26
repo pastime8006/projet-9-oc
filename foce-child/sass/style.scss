@@ -51,7 +51,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 
 // Import variables and mixins.
+
+
 @import "abstracts/abstracts";
+
+// Import variables and mixins.
+@import "components/components";
 
 /* footer
 --------------------------------------------- */
@@ -61,6 +66,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Components
 --------------------------------------------------------------*/
 @import "components/slider";
+
+ /*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "components/parrallax";
+
 
 /*--------------------------------------------------------------
 # Layouts
