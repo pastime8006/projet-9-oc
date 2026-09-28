@@ -52,6 +52,158 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* ANIMATION FADE-IN */
 /* Navigation
 // --------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-navigation {
+  position: relative;
+  width: 100%;
+}
+
+.header-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: beige;
+  height: 75px;
+}
+
+.fullscreen-menu {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  background-color: #fff9c0;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fullscreen-menu .menu-links {
+  width: 500px;
+  height: auto;
+}
+
+.title-container {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container > h1 {
+  color: #fff;
+  z-index: 2000;
+  font-family: "Quicksand", sans-serif;
+  font-size: 22px;
+}
+
+.toggle-container {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+li {
+  list-style: none;
+}
+
+.menu-links a {
+  color: #333 !important;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 4rem;
+  line-height: 2;
+}
+
+.active {
+  display: flex !important;
+}
+
+.toggle {
+  position: relative;
+  z-index: 9;
+}
+
+/*-----IMAGES MENU -------*/
+.site-logo-menu {
+  position: absolute;
+  top: 123px;
+  max-width: 190px;
+  margin: 0 auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hibiscus-menu {
+  width: 626px;
+  position: absolute;
+  top: 740px;
+  left: 1122px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.orchid-menu {
+  width: 172px;
+  position: absolute;
+  top: 152px;
+  left: -60px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.sunflower-menu {
+  width: 216px;
+  position: absolute;
+  top: 169px;
+  right: 185px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.randomflower-menu {
+  width: 75px;
+  position: absolute;
+  top: 475px;
+  right: -30px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.flower-menu {
+  width: 70px;
+  position: absolute;
+  top: 563px;
+  left: 213px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.chat-bleu {
+  width: 109px;
+  position: absolute;
+  top: 265px;
+  left: 282px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.chat-noir {
+  width: 103px;
+  position: absolute;
+  top: 576px;
+  right: 270px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.chat-jaune {
+  width: 103px;
+  position: absolute;
+  bottom: 144px;
+  left: 105px;
+  animation: float 6s ease-in-out infinite;
+}
+
 /* Posts and pages
 --------------------------------------------- */
 /* Comments
@@ -64,6 +216,74 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 /* Galleries
 --------------------------------------------- */
+.mon-slider {
+  width: 80%;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: -100px !important;
+}
+.mon-slider .swiper-wrapper {
+  align-items: center;
+}
+.mon-slider .swiper-slide {
+  width: 300px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mon-slider .swiper-slide img {
+  max-width: 100%;
+  max-height: 350px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.mon-slider .swiper-slide .slider-legend {
+  margin: 10px 0 0;
+  text-align: center;
+  height: 20px;
+}
+
+#place {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Le texte */
+#place > div {
+  position: relative;
+  z-index: 5;
+}
+
+/* Gros nuage */
+.place-bigcloud {
+  position: absolute;
+  width: 350px;
+  top: 70px;
+  right: 80px;
+  z-index: 3;
+  pointer-events: none;
+  filter: blur(12px);
+  transform: translateX(0);
+  transition: transform 0.2s ease-out;
+}
+
+/* Petit nuage */
+.place-littlecloud {
+  position: absolute;
+  width: 180px;
+  top: 240px;
+  right: 460px;
+  z-index: 4;
+  pointer-events: none;
+  filter: blur(12px);
+  transform: translateX(0);
+  transition: transform 0.2s ease-out;
+}
+
 /* footer
 --------------------------------------------- */
 .site-footer ul::after {
@@ -104,80 +324,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 /*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-.mon-slider {
-  width: 80%;
-  height: 400px;
-  margin: 0 auto;
-  overflow: hidden;
-  margin-top: -100px !important;
-}
-.mon-slider .swiper-wrapper {
-  align-items: center;
-}
-.mon-slider .swiper-slide {
-  width: 300px;
-  height: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.mon-slider .swiper-slide img {
-  max-width: 100%;
-  max-height: 350px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-.mon-slider .swiper-slide .slider-legend {
-  margin: 10px 0 0;
-  text-align: center;
-  height: 20px;
-}
-
-/*--------------------------------------------------------------
-# Components
---------------------------------------------------------------*/
-#place {
-  position: relative;
-  overflow: hidden;
-}
-
-/* Le texte */
-#place > div {
-  position: relative;
-  z-index: 5;
-}
-
-/* Gros nuage */
-.place-bigcloud {
-  position: absolute;
-  width: 350px;
-  top: 70px;
-  right: 80px;
-  z-index: 3;
-  pointer-events: none;
-  filter: blur(12px);
-  transform: translateX(0);
-  transition: transform 0.2s ease-out;
-}
-
-/* Petit nuage */
-.place-littlecloud {
-  position: absolute;
-  width: 180px;
-  top: 240px;
-  right: 460px;
-  z-index: 4;
-  pointer-events: none;
-  filter: blur(12px);
-  transform: translateX(0);
-  transition: transform 0.2s ease-out;
-}
-
-/*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
 @keyframes rotate-flower {
@@ -185,7 +331,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes float {

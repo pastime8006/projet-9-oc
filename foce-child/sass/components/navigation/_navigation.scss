@@ -1,0 +1,177 @@
+// .menu-toggle {
+//   display: block;
+// }
+
+// .main-navigation {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .title-container{
+//     flex: 3;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// .site-title{
+// list-style: none;
+
+// }
+
+// .toggle-container{
+//     flex:1;
+// }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-navigation {
+  position: relative;
+  width: 100%;
+}
+
+.header-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: beige;
+  height: 75px;
+}
+
+.fullscreen-menu {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  background-color: $color__background-ins;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.fullscreen-menu .menu-links {
+  width: 500px;
+  height: auto;
+}
+
+.title-container {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container > h1 {
+  color: #fff;
+  z-index: 2000;
+  font-family: $font__titles;
+  font-size: 22px;
+}
+
+.toggle-container {
+  flex: 1;
+  display: flex;
+  justify-content: end;
+}
+
+li {
+  list-style: none;
+}
+
+.menu-links a {
+  color: #333 !important;
+  text-decoration: none;
+  font-family: $font__main;
+  font-size: 4rem;
+  line-height: 2;
+}
+
+.active {
+  display: flex !important;
+}
+.toggle {
+  position: relative;
+  z-index: 9;
+}
+
+/*-----IMAGES MENU -------*/
+
+.site-logo-menu {
+  position: absolute;
+  top: 123px;
+  max-width: 190px;
+  margin: 0 auto;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hibiscus-menu {
+  width: 626px;
+  position: absolute;
+  top: 740px;
+  left: 1122px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.orchid-menu {
+  width: 172px;
+  position: absolute;
+  top: 152px;
+  left: -60px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.sunflower-menu {
+  width: 216px;
+  position: absolute;
+  top: 169px;
+  right: 185px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.randomflower-menu {
+  width: 75px;
+  position: absolute;
+  top: 475px;
+  right: -30px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.flower-menu {
+  width: 70px;
+  position: absolute;
+  top: 563px;
+  left: 213px;
+  animation: rotate-flower 8s linear infinite;
+}
+
+.chat-bleu {
+  width: 109px;
+  position: absolute;
+  top: 265px;
+  left: 282px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.chat-noir {
+  width: 103px;
+  position: absolute;
+  top: 576px;
+  right: 270px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.chat-jaune{
+   width: 103px;
+  position: absolute;
+  bottom: 144px;
+  left: 105px;
+    animation: float 6s ease-in-out infinite;
+}
+
