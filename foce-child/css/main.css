@@ -58,18 +58,33 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   box-sizing: border-box;
 }
 
+@keyframes floatMenu {
+  0% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  50% {
+    transform: translateX(-50%) translateY(calc(-50% + 35px));
+  }
+  75% {
+    transform: translateX(-30%) translateY(-30%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
 .main-navigation {
   position: relative;
   width: 100%;
 }
 
-.header-up {
+.nav-top {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: beige;
-  height: 75px;
+  background-color: #FFD5A2;
+  height: 80px;
 }
 
 .fullscreen-menu {
@@ -82,16 +97,23 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   display: none;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
   overflow: hidden;
 }
 
+.fullscreen-menu.active {
+  display: flex;
+  flex-direction: column;
+}
+
 .fullscreen-menu .menu-links {
-  width: 500px;
+  width: 550px;
   height: auto;
+  text-align: center;
 }
 
 .title-container {
-  flex: 3;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,39 +126,84 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   font-size: 22px;
 }
 
-.toggle-container {
-  flex: 1;
+/*-------------MENU HAMBURGER ------------------------*/
+button.toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 50px;
+  width: 50px;
+  height: 50px;
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.line-menu {
+  height: 4px;
+  background-color: #000;
+  display: block;
+  width: 40px;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.line-menu:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.line-menu:nth-child(2) {
+  transform: translateY(0);
+}
+
+.line-menu:nth-child(3) {
+  transform: translateY(7px);
+}
+
+.toggle.active .line-menu:nth-child(1) {
+  transform: rotate(135deg);
+}
+
+.toggle.active .line-menu:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle.active .line-menu:nth-child(3) {
+  transform: translateY(-7px) rotate(-135deg);
 }
 
 li {
   list-style: none;
 }
 
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .menu-links a {
   color: #333 !important;
   text-decoration: none;
   font-family: "Roboto Mono", monospace;
-  font-size: 4rem;
+  font-size: 64px;
   line-height: 2;
 }
 
-.active {
-  display: flex !important;
-}
-
-.toggle {
-  position: relative;
-  z-index: 9;
+.menu-links a:hover {
+  text-shadow: 0 0 14px #ff5c00;
 }
 
 /*-----IMAGES MENU -------*/
 .site-logo-menu {
   position: absolute;
   top: 123px;
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 190px;
-  margin: 0 auto;
   animation: float 6s ease-in-out infinite;
 }
 
@@ -185,23 +252,35 @@ li {
   position: absolute;
   top: 265px;
   left: 282px;
-  animation: float 6s ease-in-out infinite;
+  animation: floatMenu 6s ease-in-out infinite;
 }
 
 .chat-noir {
-  width: 103px;
+  width: 140px;
   position: absolute;
   top: 576px;
-  right: 270px;
-  animation: float 6s ease-in-out infinite;
+  right: 140px;
+  animation: floatMenu 6s ease-in-out infinite;
 }
 
 .chat-jaune {
-  width: 103px;
+  width: 105px;
   position: absolute;
-  bottom: 144px;
+  bottom: 100px;
   left: 105px;
-  animation: float 6s ease-in-out infinite;
+  animation: floatMenu 6s ease-in-out infinite;
+}
+
+.text-menu-footer {
+  position: absolute;
+  bottom: 40px;
+  font-size: 15px;
+  font-family: "Roboto Mono", monospace;
+  color: #000;
+}
+
+.text-menu-footer:hover {
+  text-shadow: 0 0 14px #ff5c00;
 }
 
 /* Posts and pages

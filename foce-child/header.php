@@ -12,6 +12,7 @@
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,46 +22,111 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
+	<?php wp_body_open(); ?>
 
-	<header id="masthead" class="site-header">
+	<div id="page" class="site">
 
-		<nav id="site-navigation" class="main-navigation">
-            	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
+		<header id="masthead" class="site-header">
 
-            <div class="header-up">
-                <div class="title-container">
-<h1> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                        Fleurs d'oranger & Chat errants
-                    </a></h1>
-                </div>
-                    
-                    <div class="toggle-container">
-                        <button class="toggle">Menu</button>
-                    </div>
-            </div>
+			<nav id="site-navigation" class="main-navigation">
 
-            <div class="fullscreen-menu">
+				<a class="skip-link screen-reader-text" href="#primary">
+					<?php esc_html_e( 'Skip to content', 'foce' ); ?>
+				</a>
 
-    
-                <img class="site-logo-menu"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/site-logo-menu.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
-                <img class="hibiscus-menu"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Hibiscus.png'; ?>" alt="Hibiscus du menu   principal">
-                <img class="orchid-menu"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/orchid.png'; ?>" alt="Orchidée du menu principal">
-                <img class="sunflower-menu"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Sunflower.png'; ?>" alt="Sunflower du menu principal">
-                <img class="randomflower-menu"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/random_flower.png'; ?>" alt="Random-flower du menu principal">
-                <img class="flower-menu"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/flower.png'; ?>" alt="Flower du menu principal">
-                <img class="chat-noir" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/chat-noir.png'; ?>" alt="Chat noir du menu principal">
-                <img class="chat-bleu"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/chat-bleu.png'; ?>" alt="Chat bleu du menu principal">
-                 <img class="chat-jaune"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/chat-jaune.png'; ?>" alt="Chat jaune du menu principal">
-            
+				<div class="nav-top">
 
-            <ul class="menu-links">
-                <li><a href="#story">Histoire</a></li>
-                <li><a href="#characters">Personnages</a></li>
-                <li><a href="#place">Lieu</a></li>
-                <li><a href="#studio">Studio Koukaki</a></li>
-            </ul>
-            </div>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+					<div class="title-container">
+						<h1>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								Fleurs d'oranger & Chat errants
+							</a>
+						</h1>
+					</div>
+
+					<button class="toggle">
+						<span class="line-menu"></span>
+						<span class="line-menu"></span>
+						<span class="line-menu"></span>
+					</button>
+
+				</div>
+
+				<div class="fullscreen-menu">
+
+					<img
+						class="site-logo-menu"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/site-logo-menu.png'; ?>"
+						alt="logo Fleurs d'oranger & chats errants"
+					>
+
+					<img
+						class="hibiscus-menu"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Hibiscus.png'; ?>"
+						alt="Hibiscus du menu principal"
+					>
+
+					<img
+						class="orchid-menu"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/orchid.png'; ?>"
+						alt="Orchidée du menu principal"
+					>
+
+					<img
+						class="sunflower-menu"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/Sunflower.png'; ?>"
+						alt="Sunflower du menu principal"
+					>
+
+					<img
+						class="randomflower-menu"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/random_flower.png'; ?>"
+						alt="Random-flower du menu principal"
+					>
+
+					<img
+						class="flower-menu"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/flower.png'; ?>"
+						alt="Flower du menu principal"
+					>
+
+					<img
+						class="chat-noir"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/chat-noir.png'; ?>"
+						alt="Chat noir du menu principal"
+					>
+
+					<img
+						class="chat-bleu"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/chat-bleu.png'; ?>"
+						alt="Chat bleu du menu principal"
+					>
+
+					<img
+						class="chat-jaune"
+						src="<?php echo get_stylesheet_directory_uri() . '/assets/images/chat-jaune.png'; ?>"
+						alt="Chat jaune du menu principal"
+					>
+
+					<ul class="menu-links">
+						<li>
+							<a href="#story">Histoire</a>
+						</li>
+						<li>
+							<a href="#characters">Personnages</a>
+						</li>
+						<li>
+							<a href="#place">Lieu</a>
+						</li>
+						<li>
+							<a href="#studio">Studio Koukaki</a>
+						</li>
+					</ul>
+                   <a class="menu-links text-menu-footer" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+								STUDIO KOUKAKI
+							</a>
+
+				</div>
+			</nav><!-- #site-navigation -->
+
+		</header><!-- #masthead -->

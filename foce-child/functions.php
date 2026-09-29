@@ -51,8 +51,6 @@ function theme_enqueue_styles() {
         true
     );
 
-
-    
 }
 
 function mon_theme_swiper() {
