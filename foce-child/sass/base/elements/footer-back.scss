@@ -20,66 +20,44 @@
     z-index: -1;
     @include rotate-animation;
   }
-}
-
-// Désactiver les fleurs héritées du footer parent : elles décorent désormais Oscar.
-.site-footer::before,
-.site-footer::after {
-  content: none;
-}
-
-.oscar {
-  position: relative;
-  padding-top: 10em;
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-
   &::before {
     content: url("../assets/images/Sunflower.png");
     position: absolute;
     left: 4em;
-    top: 0;
+    top: 0em;
     z-index: 10;
-    pointer-events: none;
+    @include rotate-animation;
+  }
+
+  &::after {
+    content: url("../assets/images/orchid.png");
+    position: absolute;
+    right: -5em;
+    bottom: 17.8em;
+
+    z-index: 1000;
     @include rotate-animation;
   }
 }
 
-.oscar-orchid-clip {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1000;
-
-  img {
-    position: absolute;
-    top: 3em;
-    right: -60px;
-    width: 172px;
-    height: auto;
-    animation: rotate-flower 8s linear infinite;
-  }
-}
-
 .oscar {
+  padding-top: 10em;
+  width: 100%;
+  z-index: -5;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
   .oscar-title {
     font-family: $font__titles;
     font-size: 42px;
-    width:100%;
-    max-width: 888px;
+    width: 888px;
     padding-bottom: 50px;
     background-image: url("../assets/images/back-h3-oscar.png");
     background-repeat: no-repeat;
     background-size: 810px;
-    transform: translateX(60px);
 
     h3 {
       text-align: left;
@@ -91,17 +69,13 @@
 
   .oscar-image-box {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    margin-left: 10px;
-    transform: translateX(-80px);
 
     img {
-      display: block;
       max-width: 278px;
       height: auto;
       width: 100%;
-    
       object-fit: contain;
       margin-top: -48px;
       margin-left: 0;

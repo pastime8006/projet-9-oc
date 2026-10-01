@@ -13,14 +13,13 @@
     transform: translateX(-50%) translateY(calc(-50% + 35px));
   }
 
-  75%{
-      transform: translateX(-30%) translateY(-30%);
+  75% {
+    transform: translateX(-30%) translateY(-30%);
   }
 
   100% {
     transform: translateX(-50%) translateY(-50%);
   }
-
 }
 
 .main-navigation {
@@ -149,8 +148,6 @@ li {
 .menu-links a:hover {
   text-shadow: 0 0 14px #ff5c00;
 }
-
-
 
 // .active {
 //   display: flex !important;

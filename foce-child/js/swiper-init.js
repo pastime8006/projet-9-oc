@@ -5,7 +5,7 @@ const swiper = new Swiper('.mon-slider', {
 
     grabCursor: false,
 
-    centeredSlides: false,
+    centeredSlides: true,
 
     slidesPerView: 'auto',
 

@@ -5,7 +5,7 @@ const littleCloud = document.querySelector(".place-littlecloud");
 
 window.addEventListener("scroll", () => {
 
-
+ //récupère la position verticale du haut de l’élément #place
     const placeTop = place.offsetTop;
 
 

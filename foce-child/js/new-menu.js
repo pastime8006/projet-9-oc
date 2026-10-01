@@ -1,35 +1,24 @@
-function toggleMenu() {
-  const menu = document.querySelector(".fullscreen-menu");
-  const crossToggle = document.querySelector(".toggle");
-
-  if (menu) {
-    menu.classList.toggle("active");
-  }
-
-  if (crossToggle) {
-    crossToggle.classList.toggle("active");
-  }
-}
-
+const menu = document.querySelector(".fullscreen-menu");
 const btn = document.querySelector(".toggle");
-
-if (btn) {
-  btn.addEventListener("click", toggleMenu);
-}
-
 const menuLinks = document.querySelectorAll(".menu-links a");
 
+function toggleMenu() {
+  menu?.classList.toggle("active");
+  btn?.classList.toggle("active");
+
+  // Bloque le défilement de la page quand le menu est ouvert
+  const isOpen = menu?.classList.contains("active");
+  document.body.style.overflow = isOpen ? "hidden" : "";
+}
+
+function closeMenu() {
+  menu?.classList.remove("active");
+  btn?.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+btn?.addEventListener("click", toggleMenu);
+
 menuLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    const menu = document.querySelector(".fullscreen-menu");
-    const crossToggle = document.querySelector(".toggle");
-
-    if (menu) {
-      menu.classList.remove("active");
-    }
-
-    if (crossToggle) {
-      crossToggle.classList.remove("active");
-    }
-  });
+  link.addEventListener("click", closeMenu);
 });
