@@ -1,35 +1,60 @@
 .mon-slider {
-    width: 60%;
-    height: 400px;
-    margin: 0 auto;
-    overflow: hidden;
-   margin-top: -100px !important;
+  width: 65%;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: -100px !important;
 
-    .swiper-wrapper {
-        align-items: center;
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .swiper-slide {
+    width: 300px;
+    height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    img {
+      max-width: 100%;
+      max-height: 350px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
-    .swiper-slide {
-        width: 300px;
-        height: 350px;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        img {
-            max-width: 100%;
-            max-height: 350px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .slider-legend {
-            margin: 10px 0 0;
-            text-align: center;
-            height: 20px;
-        }
+    .slider-legend {
+      margin: 10px 0 0;
+      text-align: center;
+      height: 20px;
     }
+  }
+}
+
+// changer largeur du container pour affichage 3 slides
+@media all and (max-width: #{$breakpoint__laptop}) {
+  .mon-slider {
+    width: 70%;
+  }
+}
+
+@media all and (max-width: #{$breakpoint__tablet}) {
+  .mon-slider {
+    width: 77%;
+  }
+}
+
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+  .mon-slider {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: #{$breakpoint__large_phone}) {
+  .mon-slider {
+    width: 45%;
+  }
 }

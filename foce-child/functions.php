@@ -43,14 +43,7 @@ function theme_enqueue_styles() {
         true
     );
 
-      // JavaScript animation scroll
-    wp_enqueue_script(
-        'parrallax',
-        get_stylesheet_directory_uri() . '/js/parrallax-video.js',
-        array(),
-        '1.0',
-        true
-    );
+
           // JavaScript nouveau menu
     wp_enqueue_script(
         'new-menu',

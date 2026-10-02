@@ -73,7 +73,7 @@
   .oscar-title {
     font-family: $font__titles;
     font-size: 42px;
-    width:100%;
+    width: 100%;
     max-width: 888px;
     padding-bottom: 50px;
     background-image: url("../assets/images/back-h3-oscar.png");
@@ -101,10 +101,327 @@
       max-width: 278px;
       height: auto;
       width: 100%;
-    
+
       object-fit: contain;
       margin-top: -48px;
       margin-left: 0;
     }
+  }
+}
+
+@media all and (max-width: 1192px) {
+  .oscar {
+    padding-inline: 24px;
+    box-sizing: border-box;
+
+    &::before {
+      left: 2em;
+    }
+
+    .oscar-title {
+      flex: 0 1 760px; // peut rétrécir, 760px max
+      min-width: 0;
+      max-width: 760px;
+      font-size: 35px;
+      background-size: 700px;
+      transform: translateX(40px);
+    }
+
+    .oscar-image-box {
+      flex: 0 0 auto;
+      margin-left: 0;
+      transform: translateX(-50px);
+
+      img {
+        max-width: 250px;
+      }
+    }
+  }
+
+  .oscar-orchid-clip img {
+    width: 150px;
+    right: -50px;
+  }
+}
+
+@media all and (max-width: 1040px) {
+  .oscar {
+    padding-inline: 20px;
+    padding-top: 9em;
+
+    &::before {
+      left: 1.5em;
+      zoom: 0.85;
+    }
+
+    .oscar-title {
+      flex: 0 1 640px;
+      max-width: 640px;
+      font-size: 30px !important;
+      padding-bottom: 44px;
+      background-size: 600px;
+      transform: translateX(30px);
+    }
+    h3 {
+      font-size: inherit;
+      line-height: 1.2;
+    }
+
+    .oscar-image-box {
+      transform: translateX(-40px);
+
+      img {
+        max-width: 225px;
+        margin-top: -40px;
+      }
+    }
+  }
+
+  .oscar-orchid-clip img {
+    width: 135px;
+    right: -45px;
+  }
+}
+@media all and (max-width: 920px) {
+  .oscar {
+    flex-direction: column;
+    gap: 1.5em;
+    padding-inline: 16px;
+    padding-top: 8em;
+
+    &::before {
+      left: 1em;
+      zoom: 0.7;
+    }
+
+    .oscar-title {
+      flex: none;
+      width: 100%;
+      max-width: 560px;
+      box-sizing: border-box;
+      padding: 0 24px 36px; // le texte reste à l'intérieur du fond
+      background-size: 100% auto; // le fond suit la largeur du titre
+      background-position: left top;
+      font-size: clamp(15px, 2.6vw, 24px); // 30px à 920px, diminue ensuite
+      transform: none;
+
+      h3 {
+        font-size: inherit;
+        line-height: 1.2;
+      }
+    }
+
+    .oscar-image-box {
+      margin-left: 0;
+      transform: none;
+
+      img {
+        max-width: 220px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .oscar-orchid-clip img {
+    width: 115px;
+    right: -40px;
+    top: 2.5em;
+  }
+}
+
+@media all and (max-width: 920px) {
+  .oscar {
+    gap: 0; // supprime l'espace entre titre et image
+
+    .oscar-title {
+      padding-bottom: 20px; // moins de vide sous le texte
+    }
+
+    .oscar-image-box img {
+      max-width: 220px;
+      margin-top: -40px; // remonte Oscar, il chevauche légèrement le fond
+    }
+  }
+}
+@media all and (max-width: 700px) {
+  .oscar {
+    gap: 0;
+
+    .oscar-title {
+      padding-bottom: 4vw;
+    }
+
+    .oscar-image-box img {
+      max-width: 200px;
+      margin-top: -30px;
+    }
+  }
+}
+/* ---------- ≤ 1192px : titre + Oscar côte à côte, plus compacts ---------- */
+@media all and (max-width: 1192px) {
+  .oscar {
+    padding-inline: 24px;
+    box-sizing: border-box;
+
+    &::before {
+      left: 2em;
+    }
+
+    .oscar-title {
+      flex: 0 1 760px;
+      min-width: 0;
+      max-width: 760px;
+      font-size: 38px;
+      background-size: 700px;
+      transform: translateX(40px);
+    }
+
+    .oscar-image-box {
+      flex: 0 0 auto;
+      margin-left: 0;
+      transform: translateX(-50px);
+
+      img {
+        max-width: 250px;
+      }
+    }
+  }
+
+  .oscar-orchid-clip img {
+    width: 150px;
+    right: -50px;
+  }
+}
+
+/* ---------- ≤ 1040px ---------- */
+@media all and (max-width: 1040px) {
+  .oscar {
+    padding-inline: 20px;
+    padding-top: 9em;
+
+    &::before {
+      left: 1.5em;
+      zoom: 0.85;
+    }
+
+    .oscar-title {
+      flex: 0 1 640px;
+      max-width: 640px;
+      font-size: 34px;
+      padding-bottom: 44px;
+      background-size: 600px;
+      transform: translateX(30px);
+
+      h3{
+      margin-top: 30px;
+    }
+    }
+    
+
+    .oscar-image-box {
+      transform: translateX(-40px);
+
+      img {
+        max-width: 225px;
+        margin-top: -40px;
+      }
+    }
+  }
+
+  .oscar-orchid-clip img {
+    width: 135px;
+    right: -45px;
+  }
+}
+
+/* ---------- ≤ 920px : Oscar passe SOUS le titre ---------- */
+@media all and (max-width: 920px) {
+  .oscar {
+    flex-direction: column;
+    gap: 0;
+    padding-inline: 16px;
+    padding-top: 8em;
+
+    &::before {
+      left: 1em;
+      zoom: 0.7;
+    }
+
+    .oscar-title {
+      flex: none;
+      width: 100%;
+      max-width: 800px;
+      box-sizing: border-box;
+      aspect-ratio: 880 / 220; // ⚠️ à remplacer par largeur / hauteur réelles de back-h3-oscar.png
+      padding: 0 8%;
+      background-size: 100% 100%;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      font-size: clamp(16px, 1.2vw, 28px);
+      transform: none;
+
+      h3 {
+        font-size: inherit;
+        line-height: 1.2;
+        margin: 0;
+      }
+    }
+
+    .oscar-image-box {
+      position: relative;
+      z-index: 2;
+      margin-left: 0;
+      transform: none;
+
+      img {
+        max-width: 220px;
+        margin-top: -40px;
+      }
+    }
+  }
+
+  .oscar-orchid-clip img {
+    width: 115px;
+    right: -40px;
+    top: 2.5em;
+  }
+}
+
+/* ---------- ≤ 700px ---------- */
+@media all and (max-width: 700px) {
+  .oscar {
+    padding-top: 6em;
+    gap: 20px;
+
+    &::before {
+      left: 0.5em;
+      zoom: 1;
+    }
+
+    .oscar-title {
+      max-width: 80%;
+      aspect-ratio: 810 / 240; // même ratio que le bloc 920px
+      padding: 0 3%;
+      font-size: clamp(13px, 0.5vw, 24px);
+
+      h3 {
+      text-align: left;
+      font-size: clamp(14px, 2.9vw, 24px) !important;
+      }
+    }
+
+    .oscar-image-box {
+      img {
+        max-width: 200px;
+        margin-top: -30px;
+      }
+    }
+  }
+
+  .oscar-orchid-clip img {
+    width: 90px;
+    right: -30px;
+    top: 2em;
   }
 }

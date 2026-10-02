@@ -20,7 +20,30 @@
   }
 }
 
-@include fade-in;
+/* parrallaxe et float logo */
+
+@keyframes logo-enter {
+  from {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(35px);
+  }
+}
 
 .banner {
   position: relative;
@@ -40,20 +63,40 @@
     object-fit: cover;
   }
 
-  img {
+  .site-logo-wrap {
+    --parallax-y: 0px;
+
     position: absolute;
     z-index: 2;
     width: 48%;
-    top: 58%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: float 6s ease-in-out infinite;
+    top: 35%;
+
+    // centrage horizontal sans transform
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+
+    // le transform ne gère plus que la verticale + le parallaxe
+    transform: translateY(calc(-50% + var(--parallax-y)));
     will-change: transform;
+  }
+
+  .site-logo {
+    position: static;
+    display: block;
+    width: 100%;
+    margin: 0;
+    transform: none;
+    animation:
+      logo-enter 1.4s ease-out backwards,
+      logo-float 6s ease-in-out 1.4s infinite;
+    will-change: transform, opacity;
   }
 }
 
 // Sunflower
 .story {
+  position: relative;
   animation: fade-top 2s ease-in-out;
   @include fade-in(fade-top, 100px);
 
@@ -84,13 +127,14 @@
     }
   }
 
-  // Hibiscus
   &__article {
+    position: relative;
+
     &::after {
       content: "";
       position: absolute;
-      left: calc(50% + 414px);
-      top: 2em;
+      right: -100px;
+      top: -200px;
 
       width: 200px;
       height: 200px;
@@ -98,6 +142,9 @@
       background-image: url("../assets/images/Hibiscus.png");
       @include bg-settings;
       @include rotate-animation;
+    }
+    &::before {
+      top: -100px;
     }
   }
 }
@@ -117,12 +164,15 @@
       animation: fade-top 2s ease-in-out forwards;
     }
   }
+
   div {
     flex: 1;
   }
+
   .other-characters {
     display: flex;
     flex-wrap: wrap;
+
     figure {
       width: 50%;
       padding: 2% 10%;
@@ -137,6 +187,7 @@
   width: 100%;
   min-height: 699px;
   background-size: cover;
+
   h3 {
     background-image: url("../assets/images/orange_place_bg.png");
     margin-bottom: -1em;
@@ -186,6 +237,7 @@
       @include bg-settings;
       @include rotate-animation;
     }
+
     &::after {
       content: "";
       position: absolute;
@@ -204,6 +256,10 @@
 
 // Responsive : conserver le comportement du parent
 @media all and (max-width: #{$breakpoint__small_tablet}) {
+  .site-logo-wrap {
+    top: 30%;
+  }
+
   .story {
     h2 {
       &::after {
@@ -228,8 +284,80 @@
   }
 }
 
+@media all and (max-width: #{$breakpoint__laptop}) {
+  .story {
+    &__article {
+      &::before {
+        top:-60px !important;
+        right: -60px
+      }
+    }
+
+    &__article {
+      &::after {
+        top: -150px;
+        right: -50px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__tablet}) {
+  .story {
+    &__article {
+      &::before {
+        top:-20px !important;
+        right: 180px !important;
+      }
+    }
+
+    &__article {
+      &::after {
+        top: -100px;
+        right: -100px !important;
+      }
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__small_tablet}) {
+  .story {
+    &__article {
+      &::before {
+        top:600px !important;
+      }
+    }
+
+    &__article {
+      &::after {
+        top: 0;
+      }
+    }
+  }
+}
+#studio {
+  h2 {
+    &::after {
+      right: 0.1em;
+    }
+  }
+}
+
 @media all and (max-width: #{$breakpoint__large_phone}) {
   #myVideo {
     display: none;
+  }
+
+  #studio {
+    h2 {
+      &::after {
+        right: -0.1em;
+      }
+
+      &::before {
+        background-size: 140px;
+        left: -1.6em;
+      }
+    }
   }
 }

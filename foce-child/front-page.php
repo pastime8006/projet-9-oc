@@ -19,7 +19,9 @@ get_header();
                 type="video/mp4">
         </video>
 
-        <img class="site-logo"src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+     <div class="site-logo-wrap">
+    <img class="site-logo" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="logo Fleurs d'oranger & chats errants">
+</div>
     </section>
 
     <!-------------------------SECTION STORY-------------------->
