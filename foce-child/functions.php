@@ -1,16 +1,18 @@
 <?php
 
-
-
 function theme_enqueue_styles() {
 
-    // CSS du thème parent
+//============================
+// CSS du thème parent
+//============================
     wp_enqueue_style(
         'parent-style',
         get_template_directory_uri() . '/style.css'
     );
 
-    // CSS du thème enfant
+//============================
+// CSS du thème enfant
+//============================
     wp_enqueue_style(
         'child-style',
         get_stylesheet_directory_uri() . '/style.css',
@@ -18,14 +20,20 @@ function theme_enqueue_styles() {
         filemtime( get_stylesheet_directory() . '/style.css' )
     );
 
-    // CSS généré par Sass
+//============================
+// CSS généré par Sass
+//============================
     wp_enqueue_style(
         'child-main-style',
         get_stylesheet_directory_uri() . '/css/main.css',
         array( 'child-style' ),
         filemtime( get_stylesheet_directory() . '/css/main.css' )
     );
-     // JavaScript animation scroll
+
+//============================
+// JavaScript animation scroll
+//============================
+
     wp_enqueue_script(
         'anim-scroll',
         get_stylesheet_directory_uri() . '/js/anim-scroll.js',
@@ -33,8 +41,10 @@ function theme_enqueue_styles() {
         '1.0',
         true
     );
+//============================
+// JavaScript parallaxe
+//============================
 
-      // JavaScript animation scroll
     wp_enqueue_script(
         'parrallax',
         get_stylesheet_directory_uri() . '/js/parrallax.js',
@@ -43,8 +53,10 @@ function theme_enqueue_styles() {
         true
     );
 
+//============================
+// JavaScript nouveau menu
+//============================
 
-          // JavaScript nouveau menu
     wp_enqueue_script(
         'new-menu',
         get_stylesheet_directory_uri() . '/js/new-menu.js',
@@ -62,8 +74,10 @@ if ( ! is_front_page() ) {
     return;
 }
 
+//============================
+// CSS Swiper
+//============================
 
-    // CSS Swiper
     wp_enqueue_style(
         'swiper-css',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
@@ -80,7 +94,10 @@ if ( ! is_front_page() ) {
         true
     );
 
-    // Ton fichier JS personnalisé
+//============================
+// Fichier JS personnalisé
+//============================
+
     wp_enqueue_script(
         'mon-swiper-js',
         get_stylesheet_directory_uri() . '/js/swiper-init.js',
@@ -96,7 +113,11 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 add_action( 'wp_enqueue_scripts', 'mon_theme_swiper' );
 
 
+
+//===========================================
 // Get customizer options from parent theme
+//===========================================
+
 if ( get_stylesheet() !== get_template() ) {
 
     add_filter(

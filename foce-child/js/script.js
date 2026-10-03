@@ -1,18 +1,16 @@
-// ROTATIONS DES FLEURS
+//==========================
+//ROTATION
+//==========================
 
-// Récupère toutes les images
-const images = document.querySelectorAll(".image");
+// const images = document.querySelectorAll(".image");
+// images.forEach(function(image) {
 
-//const tableauImages = Array.from(images);
+//     image.classList.add("rotate");
+// });
 
-// Parcourt le tableau
-images.forEach(function(image) {
-
-    // Applique la classe qui contient l'animation
-    image.classList.add("rotate");
-});
-
+//==========================
 //Menu hamburger
+//==========================
 
 function toggleMenu() {
   const menu = document.querySelector(".fullscreen-menu");

@@ -58,3 +58,9 @@
     width: 45%;
   }
 }
+
+@media all and (max-width: #{$breakpoint__small_phone}) {
+  .mon-slider {
+    width: 57%;
+}
+}

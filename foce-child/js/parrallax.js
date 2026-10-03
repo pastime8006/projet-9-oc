@@ -3,16 +3,17 @@ const bigCloud = document.querySelector(".place-bigcloud");
 const littleCloud = document.querySelector(".place-littlecloud");
 
 window.addEventListener("scroll", () => {
+  if (!place) return;
 
   const placeTop = place.offsetTop;
 
-  // commence 300px avant la section place
+  // La parallaxe commence 300px avant l'arrivée sur la section
   let scroll = window.scrollY - (placeTop - 300);
 
-  // empêche les valeurs négatives
+  // Empêche les valeurs négatives
   scroll = Math.max(scroll, 0);
 
-  // déplacement maximal selon la résolution
+  // Limite du déplacement selon la largeur
   let limit;
 
   if (window.innerWidth <= 700) {
@@ -24,10 +25,11 @@ window.addEventListener("scroll", () => {
   } else if (window.innerWidth <= 1192) {
     limit = 120;
   } else {
-    limit = 110;
+    // Fullscreen / desktop
+    limit = 300;
   }
 
-  // même déplacement pour les deux nuages : l'écart reste identique
+  // Vitesse de déplacement
   const movement = Math.min(scroll * 0.4, limit);
 
   if (bigCloud) {
@@ -37,8 +39,8 @@ window.addEventListener("scroll", () => {
   if (littleCloud) {
     littleCloud.style.transform = `translateX(-${movement}px)`;
   }
-
 });
+
 
 /* ------------------------- PARALLAXE LOGO ------------------------- */
 

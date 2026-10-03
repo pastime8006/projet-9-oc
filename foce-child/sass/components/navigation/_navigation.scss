@@ -1,9 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
 @keyframes floatMenu {
   0% {
     transform: translateX(-50%) translateY(-50%);
@@ -22,267 +16,367 @@
   }
 }
 
+//=======================================
+// NAVIGATION
+//=======================================
+
 .main-navigation {
   position: relative;
   width: 100%;
-}
 
-.nav-top {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background-color: $color__navigation_bg;
-  height: 80px;
-}
+  .nav-top {
+    position: relative;
 
-.fullscreen-menu {
-  position: absolute;
-  top: 75px;
-  left: 0;
-  width: 100%;
-  min-height: calc(100vh - 75px);
-  background-color: $color__background-ins;
-  display: none;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  overflow: hidden;
-}
+    @include flex-center;
 
-.fullscreen-menu.active {
-  display: flex;
-  flex-direction: column;
-}
+    padding: 15px;
+    height: 80px;
 
-.fullscreen-menu .menu-links {
-  width: 550px;
-  height: auto;
-  text-align: center;
-}
+    background-color: $color__navigation_bg;
+  }
 
-.title-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  //=======================================
+  // MENU FULLSCREEN
+  //=======================================
 
-.title-container > h1 {
-  color: #fff;
-  z-index: 2000;
-  font-family: $font__titles;
-  font-size: 22px;
-}
+  .fullscreen-menu {
+    position: absolute;
 
-/*-------------MENU HAMBURGER ------------------------*/
+    top: 75px;
+    left: 0;
 
-button.toggle {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 50px;
-  width: 50px;
-  height: 50px;
+    width: 100%;
+    min-height: calc(100vh - 75px);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 
-  z-index: 9;
-  cursor: pointer;
-}
+    background-color: $color__background-ins;
 
-.line-menu {
-  height: 4px;
-  background-color: #000;
-  display: block;
+    overflow: hidden;
 
-  width: 40px;
-  border-radius: 5px;
-  transition: all 0.5s ease-in-out;
-}
+    &.active {
+      display: flex;
+      flex-direction: column;
+    }
 
-.line-menu:nth-child(1) {
-  transform: translateY(-7px);
-}
+    .menu-links {
+      width: 550px;
+      height: auto;
+      text-align: center;
+    }
+  }
 
-.line-menu:nth-child(2) {
-  transform: translateY(0);
-}
+  //=======================================
+  // TITRE
+  //=======================================
 
-.line-menu:nth-child(3) {
-  transform: translateY(7px);
-}
+  .title-container {
+    flex: 1;
 
-.toggle.active .line-menu:nth-child(1) {
-  transform: rotate(135deg);
-}
-.toggle.active .line-menu:nth-child(2) {
-  opacity: 0;
-}
-.toggle.active .line-menu:nth-child(3) {
-  transform: translateY(-7px) rotate(-135deg);
-}
+    @include flex-center;
 
-li {
-  list-style: none;
-}
+    > h1 {
+      color: #fff;
+      z-index: 2000;
 
-.menu-links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      font-family: $font__titles;
+      font-size: 22px;
+    }
+  }
 
-.menu-links a {
-  color: #333 !important;
-  text-decoration: none;
-  font-family: $font__main;
-  font-size: 64px;
-  line-height: 2;
-}
+  //=======================================
+  // MENU HAMBURGER
+  //=======================================
 
-.menu-links a:hover {
-  text-shadow: 0 0 14px #ff5c00;
-}
+  button.toggle {
+    position: absolute;
 
-// .active {
-//   display: flex !important;
-// }
+    top: 50%;
+    right: 50px;
 
-/*-----IMAGES MENU -------*/
+    width: 50px;
+    height: 50px;
 
-.site-logo-menu {
-  position: absolute;
-  top: 123px;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 190px;
+    @include flex-center;
+    flex-direction: column;
 
-  animation: float 6s ease-in-out infinite;
-}
+    transform: translateY(-50%);
 
-.hibiscus-menu {
-  width: 100%;
-  max-width: 626px;
-  position: absolute;
-  bottom: -330px;
-  right: -328px;
-  animation: rotate-flower 8s linear infinite;
-}
+    z-index: 9;
+    cursor: pointer;
+  }
 
-.orchid-menu {
-  width: 172px;
-  position: absolute;
-  top: 152px;
-  left: -60px;
-  animation: rotate-flower 8s linear infinite;
-}
+  .line-menu {
+    height: 4px;
+    width: 40px;
 
-.sunflower-menu {
-  width: 216px;
-  position: absolute;
-  top: 169px;
-  right: 185px;
-  animation: rotate-flower 8s linear infinite;
-}
+    display: block;
 
-.randomflower-menu {
-  width: 75px;
-  position: absolute;
-  top: 475px;
-  right: -30px;
-  animation: rotate-flower 8s linear infinite;
-}
+    background-color: #000;
+    border-radius: 5px;
 
-.flower-menu {
-  width: 70px;
-  position: absolute;
-  top: 563px;
-  left: 213px;
-  animation: rotate-flower 8s linear infinite;
-}
+    transition: all 0.5s ease-in-out;
 
-.chat-bleu {
-  width: 109px;
-  position: absolute;
-  top: 265px;
-  left: 282px;
-  animation: floatMenu 6s ease-in-out infinite;
-}
+    &:nth-child(1) {
+      transform: translateY(-7px);
+    }
 
-.chat-noir {
-  width: 140px;
-  position: absolute;
-  top: 576px;
-  right: 140px;
-  animation: floatMenu 6s ease-in-out infinite;
-}
+    &:nth-child(2) {
+      transform: translateY(0);
+    }
 
-.chat-jaune {
-  width: 105px;
-  position: absolute;
-  bottom: 100px;
-  left: 105px;
-  animation: floatMenu 6s ease-in-out infinite;
-}
+    &:nth-child(3) {
+      transform: translateY(7px);
+    }
+  }
 
-.text-menu-footer {
-  position: absolute;
-  bottom: 40px;
-  font-size: 15px;
-  font-family: $font__main;
-  color: #000;
-}
-.text-menu-footer:hover {
-  text-shadow: 0 0 14px #ff5c00;
-}
+  .toggle {
+    &.active {
+      .line-menu {
+        &:nth-child(1) {
+          transform: rotate(135deg);
+        }
 
-// Responsive : conserver le comportement du parent
-@media all and (max-width: #{$breakpoint__laptop}) {
-  .chat-noir {
-    right: 70px;
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-7px) rotate(-135deg);
+        }
+      }
+    }
+  }
+
+  //=======================================
+  // LISTE / LIENS
+  //=======================================
+
+  li {
+    list-style: none;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      color: #333 !important;
+      text-decoration: none;
+
+      font-family: $font__main;
+      font-size: 64px;
+      line-height: 2;
+
+      &:hover {
+        text-shadow: 0 0 14px #ff5c00;
+      }
+    }
+  }
+
+  //=======================================
+  // IMAGES DU MENU
+  //=======================================
+
+  .site-logo-menu {
+    position: absolute;
+
+    top: 123px;
+    left: 50%;
+
+    max-width: 190px;
+
+    transform: translateX(-50%);
+
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .hibiscus-menu {
+    position: absolute;
+
+    width: 100%;
+    max-width: 626px;
+
+    bottom: -330px;
+    right: -328px;
+
+    animation: rotate-flower 8s linear infinite;
+  }
+
+  .orchid-menu {
+    position: absolute;
+
+    width: 172px;
+
+    top: 152px;
+    left: -60px;
+
+    animation: rotate-flower 8s linear infinite;
+  }
+
+  .sunflower-menu {
+    position: absolute;
+
+    width: 216px;
+
+    top: 169px;
+    right: 185px;
+
+    animation: rotate-flower 8s linear infinite;
+  }
+
+  .randomflower-menu {
+    position: absolute;
+
+    width: 75px;
+
+    top: 475px;
+    right: -30px;
+
+    animation: rotate-flower 8s linear infinite;
   }
 
   .flower-menu {
-    left: 150px;
+    position: absolute;
+
+    width: 70px;
+
+    top: 563px;
+    left: 213px;
+
+    animation: rotate-flower 8s linear infinite;
+  }
+
+  //=======================================
+  // CHATS
+  //=======================================
+
+  .chat-bleu {
+    position: absolute;
+
+    width: 109px;
+
+    top: 265px;
+    left: 282px;
+
+    animation: floatMenu 6s ease-in-out infinite;
+  }
+
+  .chat-noir {
+    position: absolute;
+
+    width: 140px;
+
+    top: 576px;
+    right: 140px;
+
+    animation: floatMenu 6s ease-in-out infinite;
+  }
+
+  .chat-jaune {
+    position: absolute;
+
+    width: 105px;
+
+    bottom: 100px;
+    left: 105px;
+
+    animation: floatMenu 6s ease-in-out infinite;
+  }
+
+  //=======================================
+  // FOOTER
+  //=======================================
+
+  .text-menu-footer {
+    position: absolute;
+
+    bottom: 40px;
+
+    font-size: 15px;
+    font-family: $font__main;
+    color: #000;
+
+    &:hover {
+      text-shadow: 0 0 14px #ff5c00;
+    }
+  }
+}
+
+//=======================================
+// RESPONSIVE
+//=======================================
+
+@media all and (max-width: #{$breakpoint__laptop}) {
+  .main-navigation {
+    .chat-noir {
+      right: 70px;
+    }
+
+    .flower-menu {
+      right: 150px;
+    }
+  }
+}
+
+@media all and (max-width: #{$breakpoint__tablet}) {
+  .main-navigation {
+    .sunflower-menu {
+      right: 40px;
+      left: auto;
+    }
   }
 }
 
 @media all and (max-width: #{$breakpoint__small_tablet}) {
-  .site-logo-wrap {
-    top: 30%;
-  }
-  .menu-links a {
-    font-size: 50px;
+  .main-navigation {
+    .site-logo-wrap {
+      top: 30%;
+    }
+
+    .menu-links {
+      a {
+        font-size: 50px;
+      }
+    }
   }
 }
 
 @media all and (max-width: #{$breakpoint__large_phone}) {
-  .site-logo-wrap {
-    top: 30%;
-  }
-  .menu-links a {
-    font-size: 45px;
-  }
+  .main-navigation {
+    .site-logo-wrap {
+      top: 30%;
+    }
 
-  .chat-noir {
-    right: 10px;
-    width: 120px;
-  }
-  .flower-menu {
-    left: 100px;
-  }
-  .sunflower-menu {
-    width: 150px;
-    right: 80px;
-  }
-  .hibiscus-menu {
-    max-width: 526px;
+    .menu-links {
+      a {
+        font-size: 45px;
+      }
+    }
+
+    .chat-noir {
+      right: 10px;
+      width: 120px;
+    }
+
+    .flower-menu {
+      left: 100px;
+    }
+
+    .sunflower-menu {
+      width: 150px;
+      right: 80px;
+    }
+
+    .hibiscus-menu {
+      max-width: 526px;
+
       bottom: -280px;
-  right: -288px;
+      right: -288px;
+    }
   }
 }

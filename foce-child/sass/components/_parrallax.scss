@@ -1,52 +1,52 @@
 #place {
   position: relative;
   // overflow: hidden;
-}
+
 
 /* Le texte */
-#place > div {
-  position: relative;
-  z-index: 5;
-}
+  &  div {
+    position: relative;
+    z-index: 5;
+  }
 
 /* Gros nuage */
-.place-bigcloud {
-  position: absolute;
+  .place-bigcloud {
+    position: absolute;
 
-  width: 350px;
+    width: 350px;
 
-  top: 70px;
-  right: 80px;
+    top: 70px;
+    right: 80px;
 
-  z-index: 3;
+    z-index: 3;
 
-  pointer-events: none;
+    pointer-events: none;
 
-  filter: blur(12px);
-  transform: translateX(0);
+    filter: blur(12px);
+    transform: translateX(0);
 
-  transition: transform 0.2s ease-out;
-}
+    transition: transform 0.2s ease-out;
+  }
 
 /* Petit nuage */
-.place-littlecloud {
-  position: absolute;
+  .place-littlecloud {
+    position: absolute;
 
-  width: 180px;
+    width: 180px;
 
-  top: 240px;
-  right: 460px;
+    top: 240px;
+    right: 460px;
 
-  z-index: 4;
+    z-index: 4;
 
-  pointer-events: none;
+    pointer-events: none;
 
-  filter: blur(12px);
+    filter: blur(12px);
 
-  transform: translateX(0);
+    transform: translateX(0);
 
-  transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
 }
 
-
+}
 
